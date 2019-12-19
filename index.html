@@ -77,11 +77,11 @@
             <button class="playBtn" id="paper" value="paper">
                 <img class="img-responsive" id="paper-icon" src="images/icon-paper.svg">
             </button>
-            
+
             <button class="playBtn" id="rock" value="rock">
                 <img class="img-responsive" id="rock-icon" src="images/icon-rock.svg">
             </button>
-            
+
             <button class="playBtn" id="scissors" value="scissors">
                 <img class="img-responsive" id="scissors-icon" src="images/icon-scissors.svg">
             </button>
@@ -95,41 +95,32 @@
 
         <!--Result Page-->
         <div class="result">
-            <div class="row result-header">
-                <div class="col-md-6 col-6">
-                    <h4 class="text-center">YOU PICKED</h4>
+            
+            <div class="row">
+                <div class="col-md-5 col-sm-5 col-5 text-center">
+                    <h4>YOU PICKED</h4>
                 </div>
-                <div class="col-md-6 col-6">
-                    <h4 class="text-center">THE HOUSE PICKED</h4>
+
+                <div class="col-md-5 col-sm-5 col-5 offset-2 text-center">
+                    <h4>THE HOUSE PICKED</h4>
                 </div>
             </div>
-
-            <div class="row picks">
-                <div class="col-md-5 col-5">
-                    <div class="yourPaper" id="paper">
-                        <img class="img-responsive" id="paper-icon" src="images/icon-paper.svg">
-                    </div>
-                    <div class="yourRock" id="rock">
-                        <img class="img-responsive" id="rock-icon" src="images/icon-rock.svg">
-                    </div>
-                    <div class="yourScissors" id="scissors">
-                        <img class="img-responsive" id="scissors-icon" src="images/icon-scissors.svg">
-                    </div>
+            <div class="row result-header">
+                <div class="col-md-5 col-sm-5 col-5 d-flex align-items-center justify-content-center">
+                    
+                    <div class="yourPick"></div>
                 </div>
-                <div class="col-md-2 col-2">
-                    <p id="result">DRAW</p>
-                    <button id="play-again"></button>
+                <div class="col-md-2 col-sm-2 col-2 matchResult">
+                    <h4 class="outcome"></h4>
+                    
                 </div>
-                <div class="col-md-5 col-5">
-                    <div class="housePaper" id="paper">
-                        <img class="img-responsive" id="paper-icon" src="images/icon-paper.svg">
-                    </div>
-                    <div class="houseRock" id="rock">
-                        <img class="img-responsive" id="rock-icon" src="images/icon-rock.svg">
-                    </div>
-                    <div class="houseScissors" id="scissors">
-                        <img class="img-responsive" id="scissors-icon" src="images/icon-scissors.svg">
-                    </div>
+                <div class="col-md-5 col-sm-5 col-5 d-flex align-items-center justify-content-center">
+                    <div class="computerPick"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-12 text-center">
+                <button type="button" class="btn btn-primary" id="playAgain">Play Again</button>
                 </div>
             </div>
 

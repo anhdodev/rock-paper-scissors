@@ -1,3 +1,7 @@
+var paper = '<img class="img-responsive" id="paper-icon" src="images/icon-paper.svg">';
+var rock = '<img class="img-responsive" id="rock-icon" src="images/icon-rock.svg">';
+var scissors = '<img class="img-responsive" id="scissors-icon" src="images/icon-scissors.svg">';
+
 function computerChoice() {
     var choice = Math.floor(Math.random() * 3);
     var pick;
@@ -39,20 +43,66 @@ function comparePicks(player, computer) {
 };
 
 $(document).ready(function () {
+    $("#playAgain").click(function () {
+        $(".result").css('display', 'none');
+        $(".play").css('display', 'block');
+        $('.yourPick').empty();
+        $('.computerPick').empty();
+    });
+    
+    
+    
+    
     var score = 0;
     $(".playBtn").click(function () {
-
+        
+        
         var playerPick = $(this).val();
+        if (playerPick === "rock") {
+            $('.yourPick').attr('id', 'rock');
+            $('.yourPick').append(rock);   
+        } else if (playerPick === "paper") {
+            $('.yourPick').attr('id', 'paper');
+            $('.yourPick').append(paper);
+        }
+        else {
+            $('.yourPick').attr('id', 'scissors');
+            $('.yourPick').append(scissors);
+        }
+        
+        
+        
+        
         var computerPick = computerChoice();
-        console.log("Player:" + playerPick);
-        console.log("Computer:" + computerPick);
+        if (computerPick === "rock") {
+            $('.computerPick').attr('id', 'rock');
+            $('.computerPick').append(rock);
+        } else if (playerPick === "paper") {
+            $('.computerPick').attr('id', 'paper');
+            $('.computerPick').append(paper);
+        }
+        else {
+            $('.computerPick').attr('id', 'scissors');
+            $('.computerPick').append(scissors);
+        }
+        
+        
+        
         if (comparePicks(playerPick, computerPick) === "player") {
             score += 1;
+            $('.outcome').text("YOU WIN");
+            $('#playAgain').css('color', 'hsl(229, 25%, 31%)');
         } else if (comparePicks(playerPick, computerPick) === "tie") {
             score += 0;
+            $('.outcome').text("IT'S A TIE");
+            $('#playAgain').css('color', 'hsl(229, 25%, 31%)');
         } else {
             score -= 1;
+            $('.outcome').text("YOU LOSE");
+            $('#playAgain').css('color', 'red');
         }
         $("#score").text(score);
+        $(".play").css('display', 'none');
+        $(".result").css('display', 'block');
     })
 });

@@ -147,11 +147,16 @@ body {
 
 #paper {
     background: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-    top: 0;
-    left: 0;
+
+}
+
+.play #paper {
     transform: translate(-50%, -50%);
 }
 
+.result #paper {
+    transform: scale(1.2);
+}
 
 
 /* Scissors */
@@ -176,7 +181,14 @@ body {
 
 #scissors {
     background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}
+
+.play #scissors {
     transform: translate(140%, -50%);
+}
+
+.result #scissors {
+    transform: scale(1.2);
 }
 
 
@@ -205,29 +217,39 @@ body {
     transform: translate(50%, 100%);
 }
 
+.play #rock {
+    transform: translate(50%, 100%);
+}
 
-
-
-
+.result #rock {
+    transform: scale(1.2);
+}
 
 
 .result {
     display: none;
-    margin: 1em 19em 1em;
     padding-top: 2em;
-    padding-bottom: 2em;
+}
+
+#playAgain {
+    background: white;
+    color: hsl(229, 25%, 31%);
+    border: none;
+    margin-top: 20px;
 }
 
 
-.yourPaper {
-    top: 7em;
+#playAgain:hover,
+#playAgain:active:focus {
+    outline: none !important;
+    box-shadow: none;
 }
 
-.yourRock {
-    top: 2em;
+.matchResult {
+    text-align: center;
+    padding-top: 20%;
 }
 
-.yourScissors {}
 
 
 
@@ -271,16 +293,28 @@ body {
         background-position: 50% 90%;
     }
 
-    #paper {
+    .play #paper {
         transform: scale(0.8) translate(-50%, -50%);
     }
 
-    #rock {
+    .play #rock {
         transform: scale(0.8) translate(60%, 150%);
     }
 
-    #scissors {
+    .play #scissors {
         transform: scale(0.8) translate(170%, -50%);
+    }
+
+    .result #paper {
+        transform: scale(1.0);
+    }
+
+    .result #rock {
+        transform: scale(1.0);
+    }
+
+    .result #scissors {
+        transform: scale(1.0);
     }
 
 }
@@ -306,16 +340,37 @@ body {
         height: 300px;
     }
 
-    #paper {
+    .play #paper {
         transform: scale(0.8) translate(-50%, 0%);
     }
 
-    #rock {
+    .play #rock {
         transform: scale(0.8) translate(40%, 150%);
     }
 
-    #scissors {
+    .play #scissors {
         transform: scale(0.8) translate(130%, 0%);
     }
+
+    .result #paper {
+        transform: scale(0.8);
+    }
+
+    .result #rock {
+        transform: scale(0.8);
+    }
+
+    .result #scissors {
+        transform: scale(0.8);
+    }
+    .matchResult h4{
+    text-align: center;
+    font-size: 16px;
+}
+    #playAgain {
+        margin-top: 40px;
+        
+    }
+
 
 }
